@@ -405,7 +405,7 @@
       if (guidanceTitle) guidanceTitle.textContent = currentLanguage === "es" ? "Consejo de misión" : "Mission guidance";
       if (guidanceEyebrow) guidanceEyebrow.textContent = currentLanguage === "es" ? "ORIENTACIÓN DE MISIÓN" : "MISSION GUIDANCE";
       if (closeGuidance) closeGuidance.setAttribute("aria-label", currentLanguage === "es" ? "Cerrar orientación" : "Close guidance");
-      if (guidanceModal && !guidanceClosed && !guidanceModal.dataset.dismissed) {
+      if (guidanceModal && !$("#screen-game").classList.contains("hidden") && !guidanceClosed && !guidanceModal.dataset.dismissed) {
         guidanceModal.classList.remove("hidden");
         guidanceModal.setAttribute("aria-hidden", "false");
       }
