@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="Base Polar: Misión Lunar, videojuego educativo de gestión lunar por turnos.">
+  <title>Base Polar: Misión Lunar</title>
+  <link rel="stylesheet" href="styles.css?v=bp-menu-buttons-stay-visible-20261112">
+</head>
+<body>
+  <main id="app" class="app-shell">
+    <section id="screen-home" class="screen home-screen">
+      <div class="home-atmosphere" aria-hidden="true">
+        <div class="home-stars"></div>
+        <div class="home-moon-ground"></div>
+        <div class="home-rock home-rock-one"></div>
+        <div class="home-rock home-rock-two"></div>
+        <div class="home-light home-light-one"></div>
+        <div class="home-light home-light-two"></div>
+        <i class="lunar-dust-particle" style="--x:4%;--y:12%;--dx:18px;--dy:14px;--duration:3s;--delay:-0s"></i>
+        <i class="lunar-dust-particle" style="--x:12%;--y:72%;--dx:24px;--dy:-18px;--duration:5.7s;--delay:-1.3s"></i>
+        <i class="lunar-dust-particle" style="--x:19%;--y:34%;--dx:-20px;--dy:22px;--duration:8.4s;--delay:-2.6s"></i>
+        <i class="lunar-dust-particle" style="--x:27%;--y:86%;--dx:16px;--dy:-24px;--duration:3s;--delay:-3.9000000000000004s"></i>
+        <i class="lunar-dust-particle" style="--x:35%;--y:18%;--dx:-26px;--dy:15px;--duration:7.7s;--delay:-5.2s"></i>
+        <i class="lunar-dust-particle" style="--x:43%;--y:61%;--dx:22px;--dy:20px;--duration:7.4s;--delay:-6.5s"></i>
+        <i class="lunar-dust-particle" style="--x:51%;--y:9%;--dx:-18px;--dy:-20px;--duration:5s;--delay:-7.800000000000001s"></i>
+        <i class="lunar-dust-particle" style="--x:59%;--y:79%;--dx:28px;--dy:-16px;--duration:4.7s;--delay:-0s"></i>
+        <i class="lunar-dust-particle" style="--x:67%;--y:29%;--dx:-24px;--dy:24px;--duration:7.4s;--delay:-1.3s"></i>
+        <i class="lunar-dust-particle" style="--x:75%;--y:91%;--dx:18px;--dy:-26px;--duration:6s;--delay:-2.6s"></i>
+        <i class="lunar-dust-particle" style="--x:83%;--y:48%;--dx:-22px;--dy:18px;--duration:4.7s;--delay:-3.9000000000000004s"></i>
+        <i class="lunar-dust-particle" style="--x:92%;--y:15%;--dx:25px;--dy:21px;--duration:8.4s;--delay:-5.2s"></i>
+        <i class="lunar-dust-particle" style="--x:8%;--y:45%;--dx:-16px;--dy:-23px;--duration:4s;--delay:-6.5s"></i>
+        <i class="lunar-dust-particle" style="--x:16%;--y:93%;--dx:21px;--dy:-18px;--duration:7.7s;--delay:-7.800000000000001s"></i>
+        <i class="lunar-dust-particle" style="--x:24%;--y:7%;--dx:-25px;--dy:19px;--duration:6.4s;--delay:-0s"></i>
+        <i class="lunar-dust-particle" style="--x:32%;--y:53%;--dx:18px;--dy:25px;--duration:5s;--delay:-1.3s"></i>
+        <i class="lunar-dust-particle" style="--x:40%;--y:28%;--dx:-19px;--dy:-24px;--duration:5.7s;--delay:-2.6s"></i>
+        <i class="lunar-dust-particle" style="--x:48%;--y:88%;--dx:24px;--dy:17px;--duration:9.4s;--delay:-3.9000000000000004s"></i>
+        <i class="lunar-dust-particle" style="--x:56%;--y:42%;--dx:-27px;--dy:18px;--duration:3s;--delay:-5.2s"></i>
+        <i class="lunar-dust-particle" style="--x:64%;--y:5%;--dx:19px;--dy:-21px;--duration:6.7s;--delay:-6.5s"></i>
+        <i class="lunar-dust-particle" style="--x:72%;--y:67%;--dx:-17px;--dy:26px;--duration:7.4s;--delay:-7.800000000000001s"></i>
+        <i class="lunar-dust-particle" style="--x:80%;--y:22%;--dx:23px;--dy:-19px;--duration:6s;--delay:-0s"></i>
+        <i class="lunar-dust-particle" style="--x:88%;--y:83%;--dx:-24px;--dy:16px;--duration:4.7s;--delay:-1.3s"></i>
+        <i class="lunar-dust-particle" style="--x:96%;--y:57%;--dx:18px;--dy:-25px;--duration:8.4s;--delay:-2.6s"></i>
+        <i class="lunar-dust-particle" style="--x:3%;--y:82%;--dx:26px;--dy:-17px;--duration:4s;--delay:-3.9000000000000004s"></i>
+        <i class="lunar-dust-particle" style="--x:29%;--y:95%;--dx:-20px;--dy:-22px;--duration:6.7s;--delay:-5.2s"></i>
+        <i class="lunar-dust-particle" style="--x:61%;--y:96%;--dx:22px;--dy:19px;--duration:6.4s;--delay:-6.5s"></i>
+        <i class="lunar-dust-particle" style="--x:94%;--y:36%;--dx:-25px;--dy:21px;--duration:6s;--delay:-7.800000000000001s"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:30.3%;--y:30.0%;--dx:-8.0px;--dy:-38.8px;--duration:12.04s;--delay:-5.89s;--particle-size:2.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:88.3%;--y:3.9%;--dx:-14.7px;--dy:42.6px;--duration:13.33s;--delay:-4.28s;--particle-size:3.3px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:69.7%;--y:5.7%;--dx:-19.1px;--dy:31.4px;--duration:9.55s;--delay:-8.61s;--particle-size:3.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:92.6%;--y:42.4%;--dx:33.9px;--dy:-5.1px;--duration:11.38s;--delay:-10.30s;--particle-size:2.8px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:40.6%;--y:97.0%;--dx:-11.0px;--dy:-4.9px;--duration:5.71s;--delay:-4.74s;--particle-size:1.8px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:57.5%;--y:81.9%;--dx:-32.9px;--dy:-11.0px;--duration:4.89s;--delay:-3.90s;--particle-size:3.8px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:58.7%;--y:31.3%;--dx:48.5px;--dy:-6.7px;--duration:8.23s;--delay:-3.68s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:51.5%;--y:96.5%;--dx:-6.7px;--dy:27.9px;--duration:4.83s;--delay:-1.95s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:98.6%;--y:7.9%;--dx:42.0px;--dy:-3.8px;--duration:6.13s;--delay:-0.96s;--particle-size:3.8px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:97.9%;--y:15.8%;--dx:31.4px;--dy:13.4px;--duration:13.18s;--delay:-9.79s;--particle-size:2.0px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:50.4%;--y:7.4%;--dx:-29.0px;--dy:-26.0px;--duration:5.90s;--delay:-4.38s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:74.3%;--y:12.3%;--dx:29.8px;--dy:-40.1px;--duration:12.33s;--delay:-9.09s;--particle-size:3.1px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:35.3%;--y:28.3%;--dx:44.2px;--dy:44.5px;--duration:10.88s;--delay:-9.98s;--particle-size:2.5px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:63.6%;--y:24.3%;--dx:26.3px;--dy:9.8px;--duration:8.48s;--delay:-0.38s;--particle-size:2.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:22.6%;--y:49.1%;--dx:40.5px;--dy:28.4px;--duration:9.45s;--delay:-7.58s;--particle-size:2.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:75.4%;--y:55.9%;--dx:-10.5px;--dy:25.1px;--duration:7.17s;--delay:-5.61s;--particle-size:2.5px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:62.0%;--y:80.7%;--dx:24.4px;--dy:8.0px;--duration:4.58s;--delay:-3.13s;--particle-size:1.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:31.4%;--y:68.1%;--dx:42.2px;--dy:-41.8px;--duration:4.87s;--delay:-0.53s;--particle-size:3.1px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:2.9%;--y:17.0%;--dx:-9.6px;--dy:-40.8px;--duration:13.44s;--delay:-6.19s;--particle-size:3.1px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:62.9%;--y:28.6%;--dx:-14.7px;--dy:-9.4px;--duration:11.54s;--delay:-9.44s;--particle-size:3.2px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:69.7%;--y:66.0%;--dx:-44.1px;--dy:-31.8px;--duration:13.27s;--delay:-8.43s;--particle-size:3.4px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:5.1%;--y:48.3%;--dx:37.8px;--dy:19.1px;--duration:12.25s;--delay:-4.49s;--particle-size:2.3px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:85.7%;--y:12.0%;--dx:43.9px;--dy:3.2px;--duration:7.01s;--delay:-6.76s;--particle-size:2.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:12.2%;--y:73.5%;--dx:25.6px;--dy:-24.9px;--duration:10.64s;--delay:-5.88s;--particle-size:3.4px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:41.4%;--y:4.2%;--dx:-9.9px;--dy:-18.9px;--duration:13.23s;--delay:-2.88s;--particle-size:1.8px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:34.7%;--y:79.5%;--dx:8.0px;--dy:-11.1px;--duration:9.72s;--delay:-1.21s;--particle-size:3.5px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:15.9%;--y:34.3%;--dx:-20.3px;--dy:-40.8px;--duration:6.39s;--delay:-1.64s;--particle-size:2.2px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:5.6%;--y:19.1%;--dx:-26.3px;--dy:-32.2px;--duration:6.63s;--delay:-2.47s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:87.5%;--y:32.3%;--dx:-19.4px;--dy:-40.7px;--duration:9.44s;--delay:-0.34s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:17.2%;--y:95.5%;--dx:-21.5px;--dy:20.9px;--duration:12.81s;--delay:-10.23s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:1.4%;--y:50.9%;--dx:-6.0px;--dy:31.5px;--duration:9.64s;--delay:-6.35s;--particle-size:2.1px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:60.0%;--y:82.9%;--dx:-12.3px;--dy:-33.2px;--duration:10.90s;--delay:-10.40s;--particle-size:3.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:10.4%;--y:26.4%;--dx:-9.5px;--dy:33.4px;--duration:12.00s;--delay:-4.59s;--particle-size:2.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:32.4%;--y:90.3%;--dx:39.9px;--dy:41.1px;--duration:9.23s;--delay:-7.73s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:24.2%;--y:16.3%;--dx:-35.5px;--dy:23.0px;--duration:12.88s;--delay:-12.18s;--particle-size:3.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:71.0%;--y:25.9%;--dx:12.3px;--dy:-24.8px;--duration:5.79s;--delay:-3.99s;--particle-size:2.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:94.7%;--y:85.0%;--dx:1.1px;--dy:-25.4px;--duration:10.65s;--delay:-10.53s;--particle-size:2.1px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:38.2%;--y:12.4%;--dx:-45.3px;--dy:-12.4px;--duration:10.57s;--delay:-9.20s;--particle-size:2.4px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:45.5%;--y:83.0%;--dx:44.6px;--dy:15.8px;--duration:9.55s;--delay:-0.48s;--particle-size:3.5px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:29.5%;--y:11.3%;--dx:24.2px;--dy:15.6px;--duration:9.42s;--delay:-5.48s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:38.7%;--y:59.2%;--dx:-38.0px;--dy:-29.3px;--duration:10.65s;--delay:-9.17s;--particle-size:2.3px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:23.8%;--y:87.8%;--dx:0.9px;--dy:-32.1px;--duration:9.89s;--delay:-8.87s;--particle-size:3.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:91.2%;--y:17.3%;--dx:43.2px;--dy:28.5px;--duration:7.27s;--delay:-6.36s;--particle-size:2.0px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:8.8%;--y:19.7%;--dx:-49.4px;--dy:-10.4px;--duration:9.61s;--delay:-5.12s;--particle-size:2.8px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:27.1%;--y:83.8%;--dx:-48.0px;--dy:33.9px;--duration:5.25s;--delay:-1.64s;--particle-size:3.5px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:83.9%;--y:61.8%;--dx:36.0px;--dy:-10.5px;--duration:7.31s;--delay:-3.90s;--particle-size:4.0px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:15.4%;--y:26.8%;--dx:-29.5px;--dy:32.8px;--duration:8.66s;--delay:-8.21s;--particle-size:3.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:29.5%;--y:65.3%;--dx:12.8px;--dy:36.8px;--duration:5.60s;--delay:-1.14s;--particle-size:3.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:28.1%;--y:56.6%;--dx:42.0px;--dy:16.2px;--duration:12.82s;--delay:-7.14s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:89.7%;--y:5.1%;--dx:-6.9px;--dy:20.7px;--duration:8.68s;--delay:-5.61s;--particle-size:3.8px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:35.6%;--y:45.7%;--dx:-46.5px;--dy:25.1px;--duration:5.52s;--delay:-5.02s;--particle-size:1.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:34.2%;--y:32.9%;--dx:-34.3px;--dy:3.5px;--duration:8.56s;--delay:-7.37s;--particle-size:2.4px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:89.1%;--y:67.6%;--dx:-23.5px;--dy:-14.5px;--duration:9.22s;--delay:-4.21s;--particle-size:3.5px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:37.1%;--y:73.2%;--dx:45.8px;--dy:-6.7px;--duration:4.51s;--delay:-4.06s;--particle-size:3.2px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:23.8%;--y:21.5%;--dx:-49.1px;--dy:-41.4px;--duration:8.10s;--delay:-0.53s;--particle-size:2.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:31.9%;--y:86.3%;--dx:33.4px;--dy:-17.1px;--duration:4.58s;--delay:-4.07s;--particle-size:3.8px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:17.7%;--y:62.0%;--dx:17.1px;--dy:15.6px;--duration:8.08s;--delay:-2.49s;--particle-size:3.0px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:14.0%;--y:86.2%;--dx:1.1px;--dy:9.3px;--duration:9.10s;--delay:-0.16s;--particle-size:3.4px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:69.1%;--y:23.6%;--dx:22.6px;--dy:-2.2px;--duration:13.61s;--delay:-6.49s;--particle-size:2.6px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:4.6%;--y:33.4%;--dx:-36.6px;--dy:40.9px;--duration:6.12s;--delay:-5.34s;--particle-size:1.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:94.5%;--y:17.1%;--dx:14.5px;--dy:-4.2px;--duration:4.82s;--delay:-3.61s;--particle-size:1.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:32.2%;--y:15.0%;--dx:8.1px;--dy:-42.3px;--duration:12.18s;--delay:-9.79s;--particle-size:1.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:49.3%;--y:78.2%;--dx:33.6px;--dy:-44.3px;--duration:10.72s;--delay:-3.75s;--particle-size:3.3px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:80.0%;--y:88.1%;--dx:48.1px;--dy:-36.4px;--duration:10.65s;--delay:-4.83s;--particle-size:1.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:78.8%;--y:22.6%;--dx:1.1px;--dy:-1.5px;--duration:12.12s;--delay:-2.03s;--particle-size:1.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:88.2%;--y:81.2%;--dx:-7.8px;--dy:19.2px;--duration:7.88s;--delay:-1.86s;--particle-size:3.9px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:92.5%;--y:39.7%;--dx:-3.5px;--dy:41.0px;--duration:9.25s;--delay:-6.22s;--particle-size:2.2px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:22.1%;--y:21.7%;--dx:-13.5px;--dy:-23.1px;--duration:7.47s;--delay:-2.60s;--particle-size:3.2px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:62.7%;--y:55.7%;--dx:21.9px;--dy:-33.3px;--duration:7.38s;--delay:-1.53s;--particle-size:4.0px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:61.3%;--y:68.3%;--dx:-49.4px;--dy:-41.7px;--duration:8.42s;--delay:-1.29s;--particle-size:3.7px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:7.2%;--y:23.5%;--dx:-18.3px;--dy:19.7px;--duration:6.82s;--delay:-2.52s;--particle-size:3.3px"></i>
+        <i class="lunar-dust-particle lunar-dust-extra" style="--x:61.6%;--y:56.6%;--dx:-13.6px;--dy:-11.1px;--duration:6.32s;--delay:-1.38s;--particle-size:2.1px"></i>
+        <div class="home-astronaut">
+          <div class="astronaut-pack"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="astronaut-shoulder"></div>
+          <div class="astronaut-arm astronaut-arm-left"></div>
+          <div class="astronaut-arm astronaut-arm-right"></div>
+          <div class="astronaut-body"><span class="astronaut-chest"></span><span class="astronaut-belt"></span></div>
+          <div class="astronaut-neck"></div>
+          <div class="astronaut-helmet"><span class="helmet-glass"></span><span class="helmet-glint"></span></div>
+          <div class="astronaut-leg astronaut-leg-left"></div>
+          <div class="astronaut-leg astronaut-leg-right"></div>
+        </div>
+      </div>
+      <div class="home-content">
+        
+        <div class="home-title-mark" aria-label="BASE POLAR"><span class="title-word"><span class="title-letter" style="--letter:0;--glow-index:0" aria-hidden="true">B</span><span class="title-letter" style="--letter:1;--glow-index:1" aria-hidden="true">A</span><span class="title-letter" style="--letter:2;--glow-index:2" aria-hidden="true">S</span><span class="title-letter" style="--letter:3;--glow-index:3" aria-hidden="true">E</span></span><br><span class="title-word"><span class="title-letter" style="--letter:4;--glow-index:4" aria-hidden="true">P</span><span class="title-letter" style="--letter:5;--glow-index:5" aria-hidden="true">O</span><span class="title-letter" style="--letter:0;--glow-index:6" aria-hidden="true">L</span><span class="title-letter" style="--letter:1;--glow-index:7" aria-hidden="true">A</span><span class="title-letter" style="--letter:2;--glow-index:8" aria-hidden="true">R</span></span></div>
+        <h1 aria-label="MISIÓN LUNAR"><span class="title-word"><span class="title-letter" style="--letter:0;--glow-index:0" aria-hidden="true">M</span><span class="title-letter" style="--letter:1;--glow-index:1" aria-hidden="true">I</span><span class="title-letter" style="--letter:2;--glow-index:2" aria-hidden="true">S</span><span class="title-letter" style="--letter:3;--glow-index:3" aria-hidden="true">I</span><span class="title-letter" style="--letter:4;--glow-index:4" aria-hidden="true">Ó</span><span class="title-letter" style="--letter:5;--glow-index:5" aria-hidden="true">N</span></span> <span class="title-word"><span class="title-letter" style="--letter:0;--glow-index:6" aria-hidden="true">L</span><span class="title-letter" style="--letter:1;--glow-index:7" aria-hidden="true">U</span><span class="title-letter" style="--letter:2;--glow-index:8" aria-hidden="true">N</span><span class="title-letter" style="--letter:3;--glow-index:9" aria-hidden="true">A</span><span class="title-letter" style="--letter:4;--glow-index:10" aria-hidden="true">R</span></span></h1>
+        <div class="home-title-rule"></div>
+        <p class="lead">Una nueva frontera. Una misión de 30 días. Tu objetivo: establecer una base sostenible en el polo sur lunar.</p>
+        <div class="home-actions home-menu">
+          <button id="start-btn" class="btn btn-primary home-menu-btn"><span class="menu-index">01</span><span>Iniciar misión</span><span class="menu-arrow">→</span></button>
+          <button id="instructions-btn" class="btn btn-secondary home-menu-btn"><span class="menu-index">02</span><span>Cómo jugar</span><span class="menu-arrow">→</span></button>
+          <button id="encyclopedia-btn" class="btn btn-ghost home-menu-btn"><span class="menu-index">03</span><span>Datos científicos</span><span class="menu-arrow">→</span></button>
+          <button id="home-settings-btn" class="btn btn-ghost home-menu-btn settings-menu-btn"><span class="menu-index">04</span><span>Ajustes</span><span class="menu-arrow">⚙</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-instructions" class="screen hidden">
+      <div class="content-panel panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">CENTRO DE CONTROL</p><h2>Manual de misión</h2></div>
+          <button id="close-instructions-btn" class="icon-btn" type="button" aria-label="Volver al menú principal">✕</button>
+        </div>
+        <div class="instruction-grid">
+          <article><span class="number">01</span><h3>Administra tus recursos</h3><p>Vigila oxígeno, agua, energía, comida, moral y polvo lunar. Si oxígeno, agua o energía llegan a cero, la misión termina.</p></article>
+          <article><span class="number">02</span><h3>Usa tus puntos de acción</h3><p>Cada periodo dispones de 3 PA. Las acciones tienen costes y efectos distintos. Los puntos no se acumulan.</p></article>
+          <article><span class="number">03</span><h3>Supera los eventos</h3><p>En los días 5, 10, 15 y 20 tendrás que responder a situaciones que afectan a la base.</p></article>
+          <article><span class="number">04</span><h3>Investiga</h3><p>Alcanza al menos 100 puntos de ciencia antes de terminar el día 30 para completar la misión.</p></article>
+        </div>
+        <div class="rules-strip"><strong>Fin de cada periodo:</strong> consumo básico de oxígeno (25), agua (20) y comida (20). La energía depende de si es periodo diurno o nocturno.</div>
+      </div>
+    </section>
+
+    <section id="screen-encyclopedia" class="screen hidden">
+      <div class="content-panel panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">ARCHIVO DE INVESTIGACIÓN</p><h2>Datos científicos</h2></div>
+          <button id="close-encyclopedia-btn" class="icon-btn" type="button" aria-label="Volver al menú principal">✕</button>
+        </div>
+        <div class="encyclopedia-grid">
+          <article class="data-card"><img class="data-image" src="assets/ciencia/energia-lunar.webp" alt="Ilustración de un reactor de energía lunar"><div class="data-icon">⚛</div><h3>Reactor de fisión</h3><p>Los sistemas de fisión de superficie se estudian como una posible fuente de energía continua para futuras bases lunares. Un reactor puede aportar electricidad durante periodos sin luz solar, pero requiere diseño, blindaje, gestión térmica y sistemas de seguridad.</p><p><strong>Relación con la misión:</strong> si instalas el reactor y lo activas al comenzar la noche lunar, compensa el consumo energético nocturno.</p></article>
+          <article class="data-card"><img class="data-image" src="assets/estructuras/invernadero.webp" alt="Invernadero lunar"><div class="data-icon">♧</div><h3>Invernaderos y LEAF</h3><p>LEAF (Lunar Effects on Agricultural Flora) es un experimento diseñado para estudiar cómo responden las plantas a las condiciones de la Luna. No debe confundirse con un invernadero lunar operativo ni con resultados agrícolas ya confirmados en la superficie.</p><p><strong>Relación con la misión:</strong> cultivar permite recuperar alimentos y moral, pero consume agua y energía; una fuga puede dejar el invernadero fuera de servicio.</p></article>
+          <article class="data-card"><img class="data-image" src="assets/ciencia/soporte-vital.webp" alt="Sistema de soporte vital y agua"><div class="data-icon">H₂O</div><h3>Agua y baja gravedad</h3><p>La gravedad lunar equivale aproximadamente a una sexta parte de la terrestre. La tensión superficial y la capilaridad influyen en el movimiento del agua; los sistemas hidropónicos o aeropónicos deben controlar cuidadosamente humedad, nutrientes, luz y temperatura.</p><p><strong>Relación con la misión:</strong> extraer hielo recupera agua y aporta ciencia, pero requiere oxígeno y genera polvo durante la expedición.</p></article>
+          <article class="data-card"><img class="data-image" src="assets/ciencia/geologia-lunar.webp" alt="Superficie y regolito lunar"><div class="data-icon">◌</div><h3>Polvo y regolito</h3><p>El regolito es la capa de material suelto que cubre la superficie. Sus partículas pueden ser abrasivas, adherirse a superficies y afectar trajes, sellos, paneles y mecanismos. Reducir la entrada de polvo es importante para proteger equipos y tripulación.</p><p><strong>Relación con la misión:</strong> las expediciones aumentan el polvo; limpiarlo reduce su acumulación y evita penalizaciones sobre energía y moral.</p></article>
+          <article class="data-card wide-card"><img class="data-image" src="assets/ciencia/extraccion-hielo.webp" alt="Terreno de una región polar lunar"><div class="data-icon">☾</div><h3>Noches y regiones polares</h3><p>La iluminación del polo sur lunar varía mucho según el relieve. Algunas elevaciones reciben luz durante periodos prolongados, mientras que ciertos cráteres permanecen en sombra. Por eso, la planificación energética depende de la ubicación concreta y no de una noche uniforme para toda la región.</p></article>
+        </div>
+        <section class="structures-section" aria-labelledby="structures-title">
+          <div class="section-heading compact"><div><p class="eyebrow">INFRAESTRUCTURA</p><h2 id="structures-title">Estructuras de la base</h2></div></div>
+          <div class="structures-gallery">
+            <article class="structure-card"><img src="assets/estructuras/modulo-habitacional.webp" alt="Módulo habitacional lunar"><h3>Módulo habitacional</h3></article>
+            <article class="structure-card"><img src="assets/estructuras/invernadero.webp" alt="Invernadero lunar"><h3>Invernadero</h3></article>
+            <article class="structure-card"><img src="assets/estructuras/paneles-solares.webp" alt="Paneles solares lunares"><h3>Paneles solares</h3></article>
+            <article class="structure-card"><img src="assets/estructuras/rover-lunar.webp" alt="Vehículo rover lunar"><h3>Rover lunar</h3></article>
+            <article class="structure-card"><img src="assets/estructuras/torre-comunicaciones.webp" alt="Estación de comunicaciones"><h3>Torre de comunicaciones</h3></article>
+            <article class="structure-card"><img src="assets/estructuras/reactor.webp" alt="Reactor de energía"><h3>Reactor</h3></article>
+            <article class="structure-card"><img src="assets/estructuras/baterias.webp" alt="Baterías de reserva"><h3>Baterías</h3></article>
+            <article class="structure-card"><img src="assets/estructuras/soporte-vital.webp" alt="Sistema de soporte vital"><h3>Soporte vital</h3></article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="screen-game" class="screen hidden game-screen">
+      <header class="topbar">
+        <div class="brand-mini"><span>◐</span><div><strong>BASE POLAR</strong><small>CONTROL DE MISIÓN</small></div></div>
+        <div class="mission-clock"><span id="day-label">DÍA 0 / 30</span><span id="phase-label">FASE: OPERACIONES</span><span id="crew-status" class="mission-chip" aria-label="Estado de la tripulación">TRIPULACIÓN 4 / 4</span><span id="environment-status" class="mission-chip" aria-label="Estado de iluminación y paneles solares">PANELES SOLARES · PREPARADOS</span></div>
+        <div class="topbar-tools"><button id="game-encyclopedia-btn" class="btn btn-ghost btn-small">Datos científicos</button><button id="game-settings-btn" class="icon-btn settings-icon-btn" aria-label="Abrir ajustes" title="Ajustes">⚙</button></div>
+      </header>
+      <div class="game-layout">
+        <aside class="sidebar">
+          <section class="panel resource-panel">
+            <div class="section-heading compact"><div><p class="eyebrow">TELEMETRÍA</p><h2>Estado de la base</h2></div></div>
+            <div id="resource-list" class="resource-list"></div>
+            <div class="science-meter"><div class="science-head"><span class="science-label"><img src="assets/recursos/CIENCIA.png" alt="" aria-hidden="true"> Ciencia acumulada</span><strong id="science-value">0 / 100</strong></div><div class="meter-track"><div id="science-bar" class="meter-fill science-fill"></div></div></div>
+          </section>
+          <section class="panel log-panel">
+            <div class="section-heading compact"><div><p class="eyebrow">REGISTRO</p><h2>Bitácora</h2></div><span class="live-tag">ÚLTIMOS DATOS</span></div>
+            <div id="log-list" class="log-list" aria-live="polite"></div>
+          </section>
+          <section class="panel objective-panel"><p class="eyebrow">OBJETIVO PRINCIPAL</p><div class="objective-value"><strong id="objective-science">0%</strong><span>de investigación completada</span></div><div class="meter-track"><div id="objective-bar" class="meter-fill science-fill"></div></div><p>Consigue 100 puntos de ciencia y mantén con vida los sistemas críticos hasta el día 30.</p></section>
+        </aside>
+        <section class="base-view panel">
+          <div class="base-status">
+            <div><span class="status-dot"></span><span id="system-status">Sistemas nominales</span></div>
+            <div id="backup-status" role="status" aria-live="polite">Respaldo energético: no instalado</div>
+          </div>
+          <div class="action-area">
+            <div class="section-heading compact"><div><p class="eyebrow">PLANIFICACIÓN</p><h2>Acciones disponibles</h2></div><div class="ap-display"><span id="ap-count">3</span><small>PA</small></div></div>
+            <div class="action-grid">
+              <button class="action-card" data-action="grow" aria-label="Cultivar invernadero. Cuesta 1 punto de acción."><span class="action-symbol"><img src="assets/acciones/cultivar.webp" alt="" aria-hidden="true"></span><span class="action-name">Cultivar invernadero</span><span class="action-cost">1 PA</span><small>+25 comida · +10 moral<br>−15 agua · −20 energía</small></button>
+              <button class="action-card" data-action="ice" aria-label="Extraer hielo lunar. Cuesta 2 puntos de acción."><span class="action-symbol"><img src="assets/acciones/extraer-hielo.webp" alt="" aria-hidden="true"></span><span class="action-name">Extraer hielo lunar</span><span class="action-cost">2 PA</span><small>+40 agua · +10 ciencia<br>−15 oxígeno · +20 polvo</small></button>
+              <button class="action-card" data-action="oxygen" aria-label="Generar oxígeno. Cuesta 1 punto de acción."><span class="action-symbol"><img src="assets/acciones/generar-oxigeno.webp" alt="" aria-hidden="true"></span><span class="action-name">Generar oxígeno</span><span class="action-cost">1 PA</span><small>+35 oxígeno · −25 energía</small></button>
+              <button class="action-card" data-action="clean" aria-label="Limpiar polvo lunar. Cuesta 1 punto de acción."><span class="action-symbol"><img src="assets/acciones/limpiar-polvo.webp" alt="" aria-hidden="true"></span><span class="action-name">Limpiar polvo</span><span class="action-cost">1 PA</span><small>−30 polvo lunar</small></button>
+              <button class="action-card" data-action="reactor" aria-label="Instalar reactor de fisión. Cuesta 3 puntos de acción."><span class="action-symbol"><img src="assets/acciones/instalar-reactor.webp" alt="" aria-hidden="true"></span><span class="action-name">Instalar reactor</span><span class="action-cost">3 PA</span><small>+20 ciencia · respaldo nocturno</small></button>
+              <button class="action-card" data-action="battery" aria-label="Instalar baterías de reserva. Cuesta 2 puntos de acción."><span class="action-symbol"><img src="assets/acciones/instalar-baterias.webp" alt="" aria-hidden="true"></span><span class="action-name">Instalar baterías</span><span class="action-cost">2 PA</span><small>+300 energía almacenada · respaldo nocturno</small></button>
+              <button class="action-card" data-action="experiment" aria-label="Realizar experimento científico. Cuesta 1 punto de acción."><span class="action-symbol"><img src="assets/acciones/experimento.webp" alt="" aria-hidden="true"></span><span class="action-name">Experimento científico</span><span class="action-cost">1 PA</span><small>+15 ciencia · −10 energía<br>−5 oxígeno</small></button>
+            </div>
+            <div class="action-footer"><p id="action-feedback" role="status">Selecciona una acción para preparar la base.</p><button id="advance-btn" class="btn btn-primary advance-btn">Avanzar 5 días <span>→</span></button></div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <section id="screen-result" class="screen hidden">
+      <div class="result-panel panel">
+        <div id="result-symbol" class="result-symbol">✦</div>
+        <p class="eyebrow">INFORME FINAL DE MISIÓN</p>
+        <h2 id="result-title">Misión completada</h2>
+        <p id="result-description"></p>
+        <div id="result-stats" class="result-stats"></div>
+        <div class="home-actions result-actions"><button id="restart-btn" class="btn btn-primary">Jugar de nuevo</button><button class="btn btn-secondary" data-go="home">Menú principal</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="settings-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <div class="settings-card panel">
+      <div class="section-heading"><div><p class="eyebrow">PREFERENCIAS</p><h2 id="settings-title">Ajustes</h2></div><button id="close-settings-btn" class="icon-btn" aria-label="Cerrar ajustes">✕</button></div>
+      <div class="settings-language-row"><label for="language-select">Idioma / Language</label><select id="language-select" class="language-select" aria-label="Seleccionar idioma"><option value="en" selected>English</option><option value="es">Español</option></select></div>
+      <div class="settings-audio-row"><label for="music-volume"><span class="settings-sound-icon">♫</span>Música</label><output id="music-volume-value" for="music-volume">50%</output></div>
+      <input class="audio-slider" id="music-volume" type="range" min="0" max="100" value="50" step="1" aria-label="Volumen de música">
+      <div class="settings-audio-row"><label for="effects-volume"><span class="settings-sound-icon">◖</span>Efectos de sonido</label><output id="effects-volume-value" for="effects-volume">70%</output></div>
+      <input class="audio-slider" id="effects-volume" type="range" min="0" max="100" value="70" step="1" aria-label="Volumen de efectos de sonido">
+      <div class="settings-actions">
+        <button id="save-settings-btn" class="btn btn-primary save-home-btn"><span>▣</span> Guardar progreso</button>
+        <button id="exit-settings-btn" class="btn btn-secondary save-home-btn"><span>↩</span> Salir al menú principal</button>
+      </div>
+    </div>
+  </div>
+  <div id="event-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="event-title">
+    <div class="modal-card panel"><p class="eyebrow">DECISIÓN DE MISIÓN</p><div id="event-icon" class="event-icon">⚠</div><h2 id="event-title">Evento</h2><p id="event-description"></p><div id="event-options" class="event-options"></div></div>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="game.js?v=bp-verified-navigation-title-settings-20261113"></script>
+</body>
+</html>
