@@ -3162,3 +3162,31 @@ html[lang="es"] #screen-game .game-layout > #system-advice::before{
  .guidance-card{padding:30px 18px 24px!important}
  .guidance-card #guidance-message{font-size:14px!important}
 }
+
+
+/* ORIENTACIÓN DE MISIÓN: tipografía más grande y legible. */
+.guidance-card .eyebrow{
+  font-size:14px!important;
+  letter-spacing:2.2px!important;
+  margin-bottom:14px!important;
+}
+.guidance-card .guidance-icon{
+  font-size:52px!important;
+  margin:12px 0!important;
+}
+.guidance-card #guidance-title{
+  font-size:clamp(34px,4vw,42px)!important;
+  line-height:1.12!important;
+  margin:8px 0 14px!important;
+}
+.guidance-card #guidance-message{
+  font-size:19px!important;
+  line-height:1.8!important;
+  font-weight:600!important;
+  margin:16px 6px 8px!important;
+}
+@media(max-width:600px){
+  .guidance-card .eyebrow{font-size:12px!important}
+  .guidance-card #guidance-title{font-size:32px!important}
+  .guidance-card #guidance-message{font-size:17px!important;line-height:1.7!important}
+}
