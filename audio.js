@@ -71,8 +71,18 @@
     Object.keys(sounds).forEach(stopSound);
   }
 
+  function isHomeScreenVisible() {
+    const home = $("#screen-home");
+    return !!home && !home.classList.contains("hidden");
+  }
+
+  function stopAudioWhenReturningHome() {
+    // Al volver al menú principal no deben quedar alarmas ni efectos de la misión.
+    stopAllEffects();
+  }
+
   function playSound(name, options = {}) {
-    if (muted) return;
+    if (muted || isHomeScreenVisible()) return;
     const audio = sounds[name];
     if (!audio || audio.volume <= 0) return;
     try {
@@ -154,11 +164,26 @@
   document.addEventListener("click", (event) => {
     const button = event.target.closest("button");
     if (!button || button.disabled) return;
+    const returnsHome = button.id === "exit-settings-btn" ||
+      button.id === "close-instructions-btn" ||
+      button.dataset.go === "home" || button.dataset.returnTo === "home";
+    if (returnsHome) {
+      stopAudioWhenReturningHome();
+      return;
+    }
     if (button.id === "restart-btn" || button.id === "start-btn" ||
         button.classList.contains("action-card")) return;
     activateAudio();
     playSound("click", { volume: 0.55 });
   }, true);
+
+  // También cubre cualquier navegación al menú principal que no venga de un botón.
+  const homeScreen = $("#screen-home");
+  if (homeScreen) {
+    new MutationObserver(() => {
+      if (isHomeScreenVisible()) stopAudioWhenReturningHome();
+    }).observe(homeScreen, { attributes: true, attributeFilter: ["class"] });
+  }
 
   const eventModal = $("#event-modal");
   if (eventModal) {
