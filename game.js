@@ -394,7 +394,7 @@
       else if (state.food <= 0) advice = "Comida agotada: cultiva el invernadero para recuperar alimentos y moral. Sin comida, la moral disminuye en cada periodo.";
       else if (state.morale < 25) advice = "Moral crítica: recupera alimentos con el invernadero y evita decisiones que reduzcan más la moral.";
       else if (state.dust >= 70) advice = "Polvo lunar elevado: usa Limpiar polvo antes de avanzar. El polvo alto reduce energía y moral.";
-      adviceNode.textContent = advice;
+      adviceNode.textContent = translateText(advice);
     }
     $("#system-status").textContent = statusText;
     $("#system-status").className = statusLevel;
@@ -541,7 +541,7 @@
     $("#event-title").textContent = config.title;
     $("#event-description").textContent = config.description;
     const eventAdvice = $("#event-advice");
-    if (eventAdvice) eventAdvice.textContent = config.advice || "Lee el coste de cada opción antes de elegir. La decisión se aplica inmediatamente y después se calcula el consumo del periodo.";
+    if (eventAdvice) eventAdvice.textContent = translateText(config.advice || "Lee el coste de cada opción antes de elegir. La decisión se aplica inmediatamente y después se calcula el consumo del periodo.");
 
     $("#event-options").innerHTML = "";
     config.options.forEach((option) => {
