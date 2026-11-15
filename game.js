@@ -217,6 +217,29 @@
   let state = initialState();
   let toastTimer = null;
   let pendingEvent = null;
+  // Cada consejo se muestra como máximo una vez por partida, pero un consejo
+  // nuevo aparece cuando cambia el problema o se resuelve un evento especial.
+  let guidanceSeenKeys = new Set();
+
+  function showMissionGuidance(key, message) {
+    const modal = $("#guidance-modal");
+    if (!modal || !key || !message || state.gameOver) return;
+    const gameScreen = $("#screen-game");
+    if (!gameScreen || gameScreen.classList.contains("hidden")) return;
+    if (guidanceSeenKeys.has(key)) return;
+    guidanceSeenKeys.add(key);
+    const messageNode = $("#guidance-message");
+    const titleNode = $("#guidance-title");
+    const eyebrowNode = $("#guidance-eyebrow");
+    const closeNode = $("#close-guidance-btn");
+    if (messageNode) messageNode.textContent = translateText(message);
+    if (titleNode) titleNode.textContent = currentLanguage === "es" ? "Consejo de misión" : "Mission guidance";
+    if (eyebrowNode) eyebrowNode.textContent = currentLanguage === "es" ? "ORIENTACIÓN DE MISIÓN" : "MISSION GUIDANCE";
+    if (closeNode) closeNode.setAttribute("aria-label", currentLanguage === "es" ? "Cerrar orientación" : "Close guidance");
+    modal.dataset.dismissed = "";
+    modal.classList.remove("hidden");
+    modal.setAttribute("aria-hidden", "false");
+  }
 
   function showScreen(name) {
     if (!screens.includes(name)) return;
@@ -384,29 +407,37 @@
       statusText = "Reservas de energía bajas";
       statusLevel = "warning";
     }
-    const adviceNode = $("#guidance-message");
-    if (adviceNode) {
-      let advice = "Sistemas estables: continúa vigilando los recursos y prepara el respaldo energético antes de la noche lunar.";
-      if (state.greenhouseDestroyed) advice = "Invernadero dañado: revisa el evento y compara el coste de reparar con sellarlo. Si reparas, vigila especialmente el oxígeno y el polvo.";
-      else if (criticalResource?.[0] === "oxygen") advice = "Oxígeno bajo: genera oxígeno antes de avanzar el periodo. Si está por debajo del 25%, prioriza esta acción y evita gastar energía en tareas no esenciales.";
-      else if (criticalResource?.[0] === "water") advice = "Agua baja: extrae hielo lunar para recuperar reservas. Ten en cuenta que extraer hielo consume oxígeno y genera polvo.";
-      else if (criticalResource?.[0] === "energy" || state.energy / 500 < .35) advice = "Energía baja: instala baterías o un reactor antes de la noche lunar. En los días de oscuridad, activa el respaldo cuando aparezca el evento.";
-      else if (state.food <= 0) advice = "Comida agotada: cultiva el invernadero para recuperar alimentos y moral. Sin comida, la moral disminuye en cada periodo.";
-      else if (state.morale < 25) advice = "Moral crítica: recupera alimentos con el invernadero y evita decisiones que reduzcan más la moral.";
-      else if (state.dust >= 70) advice = "Polvo lunar elevado: usa Limpiar polvo antes de avanzar. El polvo alto reduce energía y moral.";
-      adviceNode.textContent = translateText(advice);
-      const guidanceModal = $("#guidance-modal");
-      const guidanceTitle = $("#guidance-title");
-      const guidanceEyebrow = $("#guidance-eyebrow");
-      const closeGuidance = $("#close-guidance-btn");
-      if (guidanceTitle) guidanceTitle.textContent = currentLanguage === "es" ? "Consejo de misión" : "Mission guidance";
-      if (guidanceEyebrow) guidanceEyebrow.textContent = currentLanguage === "es" ? "ORIENTACIÓN DE MISIÓN" : "MISSION GUIDANCE";
-      if (closeGuidance) closeGuidance.setAttribute("aria-label", currentLanguage === "es" ? "Cerrar orientación" : "Close guidance");
-      if (guidanceModal && $("#screen-game") && !$("#screen-game").classList.contains("hidden") && !guidanceModal.dataset.dismissed) {
-        guidanceModal.classList.remove("hidden");
-        guidanceModal.setAttribute("aria-hidden", "false");
-      }
+    let advice = "Sistemas estables: continúa vigilando los recursos y prepara el respaldo energético antes de la noche lunar.";
+    let adviceKey = "stable";
+    if (state.greenhouseDestroyed) {
+      adviceKey = "greenhouse-destroyed";
+      advice = "Invernadero dañado: revisa el evento y compara el coste de reparar con sellarlo. Si reparas, vigila especialmente el oxígeno y el polvo.";
+    } else if (criticalResource?.[0] === "oxygen") {
+      adviceKey = "critical-oxygen";
+      advice = "Oxígeno bajo: genera oxígeno antes de avanzar el periodo. Si está por debajo del 25%, prioriza esta acción y evita gastar energía en tareas no esenciales.";
+    } else if (criticalResource?.[0] === "water") {
+      adviceKey = "critical-water";
+      advice = "Agua baja: extrae hielo lunar para recuperar reservas. Ten en cuenta que extraer hielo consume oxígeno y genera polvo.";
+    } else if (criticalResource?.[0] === "energy" || state.energy / 500 < .35) {
+      adviceKey = "critical-energy";
+      advice = "Energía baja: instala baterías o un reactor antes de la noche lunar. En los días de oscuridad, activa el respaldo cuando aparezca el evento.";
+    } else if (state.food <= 0) {
+      adviceKey = "critical-food";
+      advice = "Comida agotada: cultiva el invernadero para recuperar alimentos y moral. Sin comida, la moral disminuye en cada periodo.";
+    } else if (state.morale < 25) {
+      adviceKey = "critical-morale";
+      advice = "Moral crítica: recupera alimentos con el invernadero y evita decisiones que reduzcan más la moral.";
+    } else if (state.dust >= 70) {
+      adviceKey = "critical-dust";
+      advice = "Polvo lunar elevado: usa Limpiar polvo antes de avanzar. El polvo alto reduce energía y moral.";
     }
+    showMissionGuidance(adviceKey, advice);
+    const guidanceTitle = $("#guidance-title");
+    const guidanceEyebrow = $("#guidance-eyebrow");
+    const closeGuidance = $("#close-guidance-btn");
+    if (guidanceTitle) guidanceTitle.textContent = currentLanguage === "es" ? "Consejo de misión" : "Mission guidance";
+    if (guidanceEyebrow) guidanceEyebrow.textContent = currentLanguage === "es" ? "ORIENTACIÓN DE MISIÓN" : "MISSION GUIDANCE";
+    if (closeGuidance) closeGuidance.setAttribute("aria-label", currentLanguage === "es" ? "Cerrar orientación" : "Close guidance");
     $("#system-status").textContent = statusText;
     $("#system-status").className = statusLevel;
     $(".status-dot").className = "status-dot " + statusLevel;
@@ -445,6 +476,7 @@
     $("#start-btn").querySelector("span:nth-child(2)").textContent = saved && saved.state && !saved.state.gameOver ? "Continuar misión" : "Iniciar misión";
   }
   function resumeGame() {
+    guidanceSeenKeys = new Set();
     const saved = readSavedGame();
     if (!saved || !saved.state || saved.state.gameOver) { startGame(); return; }
     state = Object.assign(initialState(), saved.state);
@@ -462,6 +494,7 @@
     $("#action-feedback").textContent = "Progreso recuperado. Continúa tu misión.";
   }
   function startGame() {
+    guidanceSeenKeys = new Set();
     const guidancePopup = $("#guidance-modal");
     if (guidancePopup) { guidancePopup.dataset.dismissed = ""; guidancePopup.classList.add("hidden"); guidancePopup.setAttribute("aria-hidden", "true"); }
     state = initialState();
@@ -574,6 +607,7 @@
         addLog(option.log, "alert");
         render();
         runEconomy();
+        showMissionGuidance("event-day-" + state.day, config.advice || "Lee el coste de cada opción antes de elegir. La decisión se aplica inmediatamente y después se calcula el consumo del periodo.");
       });
       $("#event-options").appendChild(button);
     });
