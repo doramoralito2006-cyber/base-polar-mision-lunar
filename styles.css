@@ -3049,3 +3049,66 @@ html[lang="es"] .event-advice::before{content:"ACCIÓN RECOMENDADA"}
   grid-column:2!important;
   grid-row:2!important;
 }
+
+
+/* ORIENTACIÓN: franja prioritaria, amplia y de alto contraste bajo el encabezado. */
+#screen-game .game-layout > #system-advice{
+  display:block!important;
+  grid-column:1 / -1!important;
+  grid-row:1!important;
+  align-self:stretch!important;
+  min-height:92px!important;
+  margin:0 0 18px!important;
+  padding:20px 24px 18px 68px!important;
+  position:relative!important;
+  z-index:20!important;
+  overflow:visible!important;
+  border:2px solid #39c9e8!important;
+  border-left:8px solid #ffbd63!important;
+  border-radius:13px!important;
+  background:linear-gradient(100deg,rgba(4,29,49,.99),rgba(8,63,83,.98) 55%,rgba(5,31,51,.99))!important;
+  color:#ffffff!important;
+  font-size:clamp(16px,1.25vw,19px)!important;
+  font-weight:700!important;
+  line-height:1.6!important;
+  letter-spacing:.15px!important;
+  text-shadow:0 2px 5px rgba(0,0,0,.95)!important;
+  box-shadow:0 8px 28px rgba(0,0,0,.55),0 0 0 3px rgba(57,201,232,.16),0 0 24px rgba(57,201,232,.28)!important;
+}
+#screen-game .game-layout > #system-advice::after{
+  content:"ⓘ";
+  position:absolute;
+  left:22px;
+  top:50%;
+  transform:translateY(-50%);
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border:2px solid #8beaff;
+  border-radius:50%;
+  color:#8beaff;
+  font-size:20px;
+  font-weight:900;
+}
+#screen-game .game-layout > #system-advice::before{
+  display:block!important;
+  content:"MISSION GUIDANCE"!important;
+  margin:0 0 7px!important;
+  color:#8beaff!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  letter-spacing:2px!important;
+  text-shadow:none!important;
+}
+html[lang="es"] #screen-game .game-layout > #system-advice::before{
+  content:"ORIENTACIÓN DE MISIÓN"!important;
+}
+@media(max-width:600px){
+  #screen-game .game-layout > #system-advice{
+    min-height:0!important;
+    padding:16px 14px 16px 52px!important;
+    font-size:15px!important;
+  }
+  #screen-game .game-layout > #system-advice::after{left:12px}
+}
