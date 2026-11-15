@@ -3409,3 +3409,28 @@ html[lang="es"] #screen-game .game-layout > #system-advice::before{
   #event-modal .event-advice{font-size:16px!important;}
   #event-modal .event-options .btn{font-size:16px!important;}
 }
+
+
+/* Tarjetas interactivas: muestran primero el nombre y giran para revelar la imagen. */
+#screen-encyclopedia .structure-flip-card,#screen-encyclopedia .research-flip-card{perspective:1200px;cursor:pointer;outline:none}
+#screen-encyclopedia .structure-flip-card{height:250px!important;min-height:250px!important;padding:0!important;overflow:visible!important;background:transparent!important;border:0!important}
+#screen-encyclopedia .structure-flip-inner,#screen-encyclopedia .research-flip-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .72s cubic-bezier(.2,.75,.25,1)}
+#screen-encyclopedia .structure-flip-card:hover .structure-flip-inner,#screen-encyclopedia .structure-flip-card:focus .structure-flip-inner,#screen-encyclopedia .research-flip-card:hover .research-flip-inner,#screen-encyclopedia .research-flip-card:focus .research-flip-inner{transform:rotateY(180deg)}
+#screen-encyclopedia .structure-flip-front,#screen-encyclopedia .structure-flip-back,#screen-encyclopedia .research-flip-front,#screen-encyclopedia .research-flip-back{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;border:1px solid #34708d;border-radius:13px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 10px 24px rgba(0,0,0,.22)}
+#screen-encyclopedia .structure-flip-front{padding:20px 14px;text-align:center;background:radial-gradient(circle at 50% 20%,rgba(42,137,174,.3),transparent 58%),linear-gradient(145deg,#102d46,#081827)}
+#screen-encyclopedia .structure-flip-front h3{margin:0 0 18px!important;color:#f0faff!important;font:800 21px var(--display)!important;line-height:1.35!important}
+#screen-encyclopedia .structure-flip-front span,#screen-encyclopedia .flip-hint{color:#69dff5;font-size:12px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+#screen-encyclopedia .structure-flip-back,#screen-encyclopedia .research-flip-back{transform:rotateY(180deg);background:#081827;padding:12px}
+#screen-encyclopedia .structure-flip-back img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;border-radius:9px;background:linear-gradient(145deg,rgba(4,14,26,.72),rgba(13,35,55,.9))}
+#screen-encyclopedia .research-flip-card{min-height:390px;padding:0!important;background:transparent!important;border:0!important;overflow:visible!important}
+#screen-encyclopedia .research-flip-front{align-items:flex-start;justify-content:flex-start;padding:22px;text-align:left;background:linear-gradient(145deg,#102b43,#091a2b)}
+#screen-encyclopedia .research-flip-front .data-icon{font-size:30px;margin-bottom:6px}
+#screen-encyclopedia .research-flip-front h3{color:#eaf8ff;font:800 21px var(--display);margin:5px 0 12px}
+#screen-encyclopedia .research-flip-front p{color:#c1d3e2;font-size:13px;line-height:1.58;margin:0 0 10px}
+#screen-encyclopedia .research-flip-front p strong{color:#69dff5}
+#screen-encyclopedia .research-flip-front .flip-hint{margin-top:auto;padding-top:8px}
+#screen-encyclopedia .research-flip-back .data-image{width:100%!important;height:calc(100% - 48px)!important;max-height:none!important;margin:0!important;object-fit:contain!important;border:0!important;background:linear-gradient(145deg,rgba(4,14,26,.72),rgba(13,35,55,.9))}
+#screen-encyclopedia .research-flip-back h3{color:#eaf8ff;font:800 18px var(--display);margin:8px 0 0}
+#screen-encyclopedia .structure-flip-card:focus-visible,#screen-encyclopedia .research-flip-card:focus-visible{outline:3px solid #69dff5;outline-offset:4px}
+@media(max-width:760px){#screen-encyclopedia .structure-flip-card{height:220px!important;min-height:220px!important}#screen-encyclopedia .structure-flip-front h3{font-size:17px!important}#screen-encyclopedia .research-flip-card{min-height:430px}#screen-encyclopedia .research-flip-front{padding:17px}#screen-encyclopedia .research-flip-front h3{font-size:19px}#screen-encyclopedia .research-flip-front p{font-size:12px;line-height:1.5}}
+@media(prefers-reduced-motion:reduce){#screen-encyclopedia .structure-flip-inner,#screen-encyclopedia .research-flip-inner{transition:none}}
