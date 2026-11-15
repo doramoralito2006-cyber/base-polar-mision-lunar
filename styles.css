@@ -3234,3 +3234,20 @@ html[lang="es"] #screen-game .game-layout > #system-advice::before{
   .guidance-card #guidance-title{font-size:40px!important}
   .guidance-card #guidance-message{font-size:21px!important;line-height:1.55!important}
 }
+
+
+/* BASE STRUCTURES: títulos y nombres de las estructuras más legibles. */
+#screen-encyclopedia .structures-section > .section-heading h2{
+  font-size:clamp(32px,2.5vw,38px)!important;
+  line-height:1.15!important;
+}
+#screen-encyclopedia .structures-gallery .structure-card h3{
+  font-size:clamp(17px,1.25vw,19px)!important;
+  line-height:1.35!important;
+  font-weight:700!important;
+  margin:12px 5px 7px!important;
+}
+@media(max-width:760px){
+  #screen-encyclopedia .structures-section > .section-heading h2{font-size:30px!important}
+  #screen-encyclopedia .structures-gallery .structure-card h3{font-size:16px!important}
+}
