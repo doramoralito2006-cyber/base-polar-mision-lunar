@@ -399,13 +399,10 @@
       const guidanceTitle = $("#guidance-title");
       const guidanceEyebrow = $("#guidance-eyebrow");
       const closeGuidance = $("#close-guidance-btn");
-      const guidanceKey = "basePolarGuidanceClosedV1";
-      let guidanceClosed = false;
-      try { guidanceClosed = sessionStorage.getItem(guidanceKey) === "1"; } catch (error) {}
       if (guidanceTitle) guidanceTitle.textContent = currentLanguage === "es" ? "Consejo de misión" : "Mission guidance";
       if (guidanceEyebrow) guidanceEyebrow.textContent = currentLanguage === "es" ? "ORIENTACIÓN DE MISIÓN" : "MISSION GUIDANCE";
       if (closeGuidance) closeGuidance.setAttribute("aria-label", currentLanguage === "es" ? "Cerrar orientación" : "Close guidance");
-      if (guidanceModal && !$("#screen-game").classList.contains("hidden") && !guidanceClosed && !guidanceModal.dataset.dismissed) {
+      if (guidanceModal && $("#screen-game") && !$("#screen-game").classList.contains("hidden") && !guidanceModal.dataset.dismissed) {
         guidanceModal.classList.remove("hidden");
         guidanceModal.setAttribute("aria-hidden", "false");
       }
@@ -465,6 +462,8 @@
     $("#action-feedback").textContent = "Progreso recuperado. Continúa tu misión.";
   }
   function startGame() {
+    const guidancePopup = $("#guidance-modal");
+    if (guidancePopup) { guidancePopup.dataset.dismissed = ""; guidancePopup.classList.add("hidden"); guidancePopup.setAttribute("aria-hidden", "true"); }
     state = initialState();
     pendingEvent = null;
     try { localStorage.removeItem(SAVE_KEY); } catch (error) {}
@@ -839,7 +838,7 @@
     guidanceModal.classList.add("hidden");
     guidanceModal.setAttribute("aria-hidden", "true");
     guidanceModal.dataset.dismissed = "1";
-    try { sessionStorage.setItem("basePolarGuidanceClosedV1", "1"); } catch (error) {}
+
   }
   if (closeGuidanceButton) closeGuidanceButton.addEventListener("click", dismissGuidance);
   if (guidanceModal) guidanceModal.addEventListener("click", (event) => {
