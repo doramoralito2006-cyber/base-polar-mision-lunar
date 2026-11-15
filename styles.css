@@ -3019,3 +3019,13 @@
 
 html[lang="es"] .system-advice::before{content:"ORIENTACIÓN DE MISIÓN"}
 html[lang="es"] .event-advice::before{content:"ACCIÓN RECOMENDADA"}
+
+/* La orientación de misión ocupa todo el ancho, encima de telemetría y bitácora. */
+#screen-game > .system-advice{
+  position:relative;
+  z-index:2;
+  width:100%;
+  box-sizing:border-box;
+  margin:0 0 16px;
+  clear:both;
+}
