@@ -3434,3 +3434,27 @@ html[lang="es"] #screen-game .game-layout > #system-advice::before{
 #screen-encyclopedia .structure-flip-card:focus-visible,#screen-encyclopedia .research-flip-card:focus-visible{outline:3px solid #69dff5;outline-offset:4px}
 @media(max-width:760px){#screen-encyclopedia .structure-flip-card{height:220px!important;min-height:220px!important}#screen-encyclopedia .structure-flip-front h3{font-size:17px!important}#screen-encyclopedia .research-flip-card{min-height:430px}#screen-encyclopedia .research-flip-front{padding:17px}#screen-encyclopedia .research-flip-front h3{font-size:19px}#screen-encyclopedia .research-flip-front p{font-size:12px;line-height:1.5}}
 @media(prefers-reduced-motion:reduce){#screen-encyclopedia .structure-flip-inner,#screen-encyclopedia .research-flip-inner{transition:none}}
+
+
+/* RESEARCH ARCHIVE: tarjetas más altas y texto completo sin recortes. */
+#screen-encyclopedia .content-panel{overflow-x:hidden}
+#screen-encyclopedia .section-heading{padding-right:52px;position:relative}
+#screen-encyclopedia #close-encyclopedia-btn{position:absolute;right:4px;top:2px;width:42px;height:42px;min-width:42px;font-size:21px;z-index:5}
+#screen-encyclopedia .research-flip-grid{grid-auto-rows:auto;align-items:stretch}
+#screen-encyclopedia .research-flip-card{height:500px!important;min-height:500px!important;overflow:visible!important}
+#screen-encyclopedia .research-flip-inner{height:100%;min-height:500px}
+#screen-encyclopedia .research-flip-front{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#34708d #0a1c2d;padding:22px 24px 18px}
+#screen-encyclopedia .research-flip-front p{font-size:14px;line-height:1.55;margin:0 0 12px;overflow-wrap:anywhere}
+#screen-encyclopedia .research-flip-front h3{font-size:22px;margin:6px 0 14px}
+#screen-encyclopedia .research-flip-front .flip-hint{font-size:12px;line-height:1.4;letter-spacing:.5px;margin-top:auto;padding-top:10px}
+#screen-encyclopedia .research-flip-back .data-image{object-fit:contain!important;height:calc(100% - 48px)!important}
+#screen-encyclopedia .structure-flip-front span{font-size:12px;line-height:1.4;letter-spacing:.5px}
+#screen-encyclopedia .structure-flip-card{height:260px!important;min-height:260px!important}
+@media(max-width:760px){
+ #screen-encyclopedia .research-flip-card{height:540px!important;min-height:540px!important}
+ #screen-encyclopedia .research-flip-inner{min-height:540px}
+ #screen-encyclopedia .research-flip-front{padding:18px}
+ #screen-encyclopedia .research-flip-front p{font-size:13px;line-height:1.5}
+ #screen-encyclopedia .structure-flip-card{height:230px!important;min-height:230px!important}
+ #screen-encyclopedia .section-heading{padding-right:48px}
+}
