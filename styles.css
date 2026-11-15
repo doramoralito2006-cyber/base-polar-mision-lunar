@@ -3381,3 +3381,31 @@ html[lang="es"] #screen-game .game-layout > #system-advice::before{
   #event-modal .event-advice{padding:17px 18px!important;font-size:15px!important;}
   #event-modal .event-options .btn{min-height:56px!important;padding:15px 17px!important;font-size:15px!important;}
 }
+
+
+/* MISSION DECISION: tipografía con mayor peso y legibilidad. */
+#event-modal .modal-card .eyebrow{
+  font-weight:800!important;
+}
+#event-modal #event-title{
+  font-weight:800!important;
+}
+#event-modal #event-description{
+  font-size:20px!important;
+  font-weight:600!important;
+  line-height:1.75!important;
+}
+#event-modal .event-advice{
+  font-size:19px!important;
+  font-weight:600!important;
+  line-height:1.75!important;
+}
+#event-modal .event-options .btn{
+  font-size:19px!important;
+  font-weight:750!important;
+}
+@media(max-width:600px){
+  #event-modal #event-description{font-size:17px!important;}
+  #event-modal .event-advice{font-size:16px!important;}
+  #event-modal .event-options .btn{font-size:16px!important;}
+}
