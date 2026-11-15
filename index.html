@@ -252,6 +252,7 @@
       <input class="audio-slider" id="music-volume" type="range" min="0" max="100" value="50" step="1" aria-label="Volumen de música">
       <div class="settings-audio-row"><label for="effects-volume"><span class="settings-sound-icon">◖</span>Efectos de sonido</label><output id="effects-volume-value" for="effects-volume">70%</output></div>
       <input class="audio-slider" id="effects-volume" type="range" min="0" max="100" value="70" step="1" aria-label="Volumen de efectos de sonido">
+      <label class="audio-mute-row" for="audio-mute"><input id="audio-mute" type="checkbox"> Silenciar música y efectos</label>
       <div class="settings-actions">
         <button id="save-settings-btn" class="btn btn-primary save-home-btn"><span>▣</span> Guardar progreso</button>
         <button id="exit-settings-btn" class="btn btn-secondary save-home-btn"><span>↩</span> Salir al menú principal</button>
@@ -263,5 +264,6 @@
   </div>
   <div id="toast" class="toast" role="status"></div>
   <script src="game.js?v=bp-verified-navigation-title-settings-20261113"></script>
+  <script src="audio.js?v=bp-audio-integration-20261115"></script>
 </body>
 </html>
