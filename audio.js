@@ -24,6 +24,9 @@
   let eventWasVisible = false;
   let lastResult = "";
   let lastActionMessage = "";
+  let suppressEventUntilHidden = false;
+  let suppressResultUntilCleared = false;
+  let suppressCriticalUntilCleared = false;
 
   function readPrefs() {
     try { return JSON.parse(localStorage.getItem(PREFS_KEY) || "{}"); }
@@ -104,14 +107,34 @@
     applyVolumes();
   }
 
+
+  function eventModalIsHidden() {
+    const modal = $("#event-modal");
+    return !modal || modal.classList.contains("hidden");
+  }
+
+  function resultScreenHasResult() {
+    const screen = $("#screen-result");
+    return !!screen && ["result-victory", "result-failed", "result-incomplete"]
+      .some((name) => screen.classList.contains(name));
+  }
+
+  function isSystemCritical() {
+    const status = $("#system-status");
+    return !!status && /cr[ií]tic|critical|supervivencia en riesgo|survival at risk/i.test(status.textContent);
+  }
+
   function resetAudioForNewMission() {
     // Cancela cualquier alarma/sonido que haya quedado de la misión anterior.
     stopAllEffects();
     lastResult = "";
     lastActionMessage = "";
     lastLog = $("#log-list")?.firstElementChild?.textContent || "";
-    eventWasVisible = false;
-    wasCritical = false;
+    eventWasVisible = !eventModalIsHidden();
+    wasCritical = isSystemCritical();
+    suppressEventUntilHidden = !eventModalIsHidden();
+    suppressResultUntilCleared = resultScreenHasResult();
+    suppressCriticalUntilCleared = isSystemCritical();
     if (activated && !muted && music.volume > 0) {
       try {
         music.currentTime = 0;
@@ -190,8 +213,12 @@
     eventWasVisible = !eventModal.classList.contains("hidden");
     new MutationObserver(() => {
       const visible = !eventModal.classList.contains("hidden");
-      if (visible && !eventWasVisible) playSound("alert");
-      if (!visible && eventWasVisible) stopSound("alert");
+      if (suppressEventUntilHidden) {
+        if (!visible) suppressEventUntilHidden = false;
+      } else {
+        if (visible && !eventWasVisible) playSound("alert");
+        if (!visible && eventWasVisible) stopSound("alert");
+      }
       eventWasVisible = visible;
     }).observe(eventModal, { attributes: true, attributeFilter: ["class"] });
     eventModal.addEventListener("click", (event) => {
@@ -204,6 +231,11 @@
     new MutationObserver(() => {
       const result = ["result-victory", "result-failed", "result-incomplete"]
         .find((className) => resultScreen.classList.contains(className)) || "";
+      if (suppressResultUntilCleared) {
+        if (!result) suppressResultUntilCleared = false;
+        lastResult = result;
+        return;
+      }
       if (result && result !== lastResult) {
         stopAllEffects();
         playSound(result === "result-victory" ? "success" : "alert");
@@ -218,6 +250,11 @@
     wasCritical = /cr[ií]tic|critical|supervivencia en riesgo|survival at risk/i.test(systemStatus.textContent);
     new MutationObserver(() => {
       const critical = /cr[ií]tic|critical|supervivencia en riesgo|survival at risk/i.test(systemStatus.textContent);
+      if (suppressCriticalUntilCleared) {
+        if (!critical) suppressCriticalUntilCleared = false;
+        wasCritical = critical;
+        return;
+      }
       if (critical && !wasCritical) playSound("critical");
       if (!critical && wasCritical) stopSound("critical");
       wasCritical = critical;
