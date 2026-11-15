@@ -3273,3 +3273,61 @@ html[lang="es"] #screen-game .game-layout > #system-advice::before{
     font-size:34px!important;
   }
 }
+
+
+/* Ventana MISSION DECISION: más amplia y legible, sin alterar Mission Guidance. */
+#event-modal{padding:24px!important;}
+#event-modal .modal-card{
+  width:min(700px,100%)!important;
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+  box-sizing:border-box;
+  padding:38px 44px!important;
+}
+#event-modal .modal-card .eyebrow{
+  font-size:13px!important;
+  letter-spacing:2px!important;
+  margin-bottom:12px!important;
+}
+#event-modal .event-icon{
+  font-size:58px!important;
+  margin:12px 0!important;
+}
+#event-modal #event-title{
+  font-size:clamp(36px,4vw,44px)!important;
+  line-height:1.15!important;
+  margin:8px 0 16px!important;
+}
+#event-modal #event-description{
+  font-size:17px!important;
+  line-height:1.7!important;
+  max-width:570px;
+  margin:0 auto 16px!important;
+}
+#event-modal .event-advice{
+  margin:20px 0 22px!important;
+  padding:18px 21px!important;
+  font-size:16px!important;
+  line-height:1.65!important;
+  text-align:left;
+}
+#event-modal .event-advice::before{
+  font-size:11px!important;
+  margin-bottom:8px!important;
+}
+#event-modal .event-options{gap:13px!important;margin-top:24px!important;}
+#event-modal .event-options .btn{
+  min-height:56px;
+  padding:16px 20px!important;
+  font-size:16px!important;
+  line-height:1.4!important;
+}
+@media(max-width:600px){
+  #event-modal{padding:12px!important;}
+  #event-modal .modal-card{max-height:calc(100vh - 24px);padding:26px 20px!important;}
+  #event-modal .event-icon{font-size:48px!important;}
+  #event-modal #event-title{font-size:34px!important;}
+  #event-modal #event-description{font-size:15px!important;}
+  #event-modal .event-advice{padding:14px 15px!important;font-size:14px!important;}
+  #event-modal .event-options .btn{min-height:52px;padding:14px 15px!important;font-size:14px!important;}
+}
