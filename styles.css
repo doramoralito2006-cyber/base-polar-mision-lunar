@@ -3016,3 +3016,6 @@
 @media(max-width:600px){
   .system-advice,.event-advice{padding:11px 12px;font-size:13px}
 }
+
+html[lang="es"] .system-advice::before{content:"ORIENTACIÓN DE MISIÓN"}
+html[lang="es"] .event-advice::before{content:"ACCIÓN RECOMENDADA"}
