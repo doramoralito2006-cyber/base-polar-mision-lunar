@@ -3029,3 +3029,23 @@ html[lang="es"] .event-advice::before{content:"ACCIÓN RECOMENDADA"}
   margin:0 0 16px;
   clear:both;
 }
+
+/* Orden fijo: encabezado BASE POLAR, orientación y después telemetría/bitácora. */
+#screen-game .game-layout{grid-template-rows:auto 1fr!important}
+#screen-game .game-layout > #system-advice{
+  grid-column:1 / -1!important;
+  grid-row:1!important;
+  position:relative!important;
+  z-index:3!important;
+  width:100%;
+  box-sizing:border-box;
+  margin:0 0 2px!important;
+}
+#screen-game .game-layout > .sidebar{
+  grid-column:1!important;
+  grid-row:2!important;
+}
+#screen-game .game-layout > .base-view{
+  grid-column:2!important;
+  grid-row:2!important;
+}
