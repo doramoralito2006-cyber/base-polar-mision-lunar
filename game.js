@@ -19,6 +19,21 @@
     ["Reactor de fisión","Fission reactor"],["Invernaderos y LEAF","Greenhouses and LEAF"],["Agua y baja gravedad","Water and low gravity"],["Polvo y regolito","Dust and regolith"],["Noches y regiones polares","Nights and polar regions"],
     ["Sistemas de hábitat nominales","Habitat systems nominal"],["Sistemas nominales","Systems nominal"],["Respaldo energético: no instalado","Power backup: not installed"],["Respaldo: reactor ","Backup: reactor "],["Respaldo: baterías","Backup: batteries"],["energía almacenada","stored energy"],["ACTIVO","ACTIVE"],["ACTIVAS","ACTIVE"],["instalado / sin activar","installed / inactive"],["instaladas / sin activar","installed / inactive"],
     ["¡Objetivo científico cumplido! Sobrevive y conserva oxígeno, agua y energía hasta el día 30.","Scientific objective achieved! Survive and maintain oxygen, water, and energy until day 30."],["Consigue 100 puntos de ciencia y mantén con vida los sistemas críticos hasta el día 30.","Earn 100 science points and keep critical systems running until day 30."],
+
+    ["ALERTA:","ALERT:"],["Qué hacer ahora:","What to do now:"],
+    ["Oxígeno bajo: genera oxígeno antes de avanzar el periodo. Si está por debajo del 25%, prioriza esta acción y evita gastar energía en tareas no esenciales.","Low oxygen: generate oxygen before advancing the period. Below 25%, prioritize this action and avoid spending energy on non-essential tasks."],
+    ["Agua baja: extrae hielo lunar para recuperar reservas. Ten en cuenta que extraer hielo consume oxígeno y genera polvo.","Low water: extract lunar ice to restore reserves. Remember that ice extraction consumes oxygen and creates dust."],
+    ["Energía baja: instala baterías o un reactor antes de la noche lunar. En los días de oscuridad, activa el respaldo cuando aparezca el evento.","Low energy: install batteries or a reactor before lunar night. During dark periods, activate backup when the event appears."],
+    ["Comida agotada: cultiva el invernadero para recuperar alimentos y moral. Sin comida, la moral disminuye en cada periodo.","Food depleted: grow the greenhouse to restore food and morale. Without food, morale decreases every period."],
+    ["Moral crítica: recupera alimentos con el invernadero y evita decisiones que reduzcan más la moral.","Critical morale: restore food with the greenhouse and avoid choices that reduce morale further."],
+    ["Polvo lunar elevado: usa Limpiar polvo antes de avanzar. El polvo alto reduce energía y moral.","High lunar dust: use Clean dust before advancing. High dust reduces energy and morale."],
+    ["Invernadero dañado: revisa el evento y compara el coste de reparar con sellarlo. Si reparas, vigila especialmente el oxígeno y el polvo.","Greenhouse damaged: review the event and compare the cost of repairing it with sealing it. If you repair it, watch oxygen and dust closely."],
+    ["Sistemas estables: continúa vigilando los recursos y prepara el respaldo energético antes de la noche lunar.","Systems stable: keep monitoring resources and prepare power backup before lunar night."],
+    ["Tormenta solar: refugiarse protege a la tripulación, pero cuesta 50 de energía. Comprueba tus reservas antes de elegir.","Solar storm: sheltering protects the crew but costs 50 energy. Check your reserves before choosing."],
+    ["Noche lunar: sin luz solar, la energía puede caer rápidamente. Activa el reactor o las baterías instaladas; continuar sin respaldo puede agotar la energía.","Lunar night: without sunlight, energy can drop quickly. Activate the installed reactor or batteries; continuing without backup can drain power."],
+    ["Micrometeorito: reparar consume oxígeno y aumenta el polvo. Sellar evita ese coste, pero pierdes el invernadero para el resto de la misión.","Micrometeorite: repairing consumes oxygen and increases dust. Sealing avoids that cost, but you lose the greenhouse for the rest of the mission."],
+    ["Oscuridad prolongada: esta decisión reduce la moral. Mantén comida suficiente y evita acumular más penalizaciones.","Extended darkness: this decision reduces morale. Keep enough food and avoid additional penalties."],
+    ["Lee el coste de cada opción antes de elegir. La decisión se aplica inmediatamente y después se calcula el consumo del periodo.","Read each option's cost before choosing. The decision applies immediately, then the period's resource consumption is calculated."],
     ["La misión comienza. La base dispone de tres puntos de acción.","The mission begins. The base has three action points."],["Selecciona acciones para preparar la base. Cada periodo dispone de 3 PA.","Select actions to prepare the base. Each period provides 3 AP."],["Progreso recuperado. Continúa tu misión.","Progress restored. Continue your mission."],["No se pudo guardar el progreso en este navegador.","Progress could not be saved in this browser."],["Progreso guardado. Ya puedes continuar la misión desde la portada.","Progress saved. You can continue the mission from the home screen."],["No puedes realizar esa acción ahora.","You cannot perform that action now."],["La misión ha terminado.","The mission has ended."],["Acciones bloqueadas durante un evento o la resolución del periodo.","Actions are locked during an event or period resolution."],["Puntos de acción insuficientes: requiere ","Not enough action points: requires "],[" PA."," AP."],["Invernadero fuera de servicio.","Greenhouse out of service."],["No disponible: ya instalaste las baterías.","Unavailable: batteries are already installed."],["El reactor ya está instalado.","The reactor is already installed."],["No disponible: ya instalaste el reactor.","Unavailable: the reactor is already installed."],["Las baterías ya están instaladas.","Batteries are already installed."],
     ["Oxígeno crítico","Critical oxygen"],["Agua crítica","Critical water"],["Energía crítica","Critical energy"],[" · supervivencia en riesgo"," · survival at risk"],["Sin alimentos · moral −20 por periodo","No food · morale −20 per period"],["Moral de la tripulación crítica","Crew morale critical"],["Acumulación crítica de polvo lunar","Critical lunar dust buildup"],["Reservas de energía bajas","Low energy reserves"],
     ["Día ","Day "],["Tormenta solar","Solar storm"],["Una tormenta solar se aproxima a la base. Debes decidir cómo proteger a la tripulación.","A solar storm is approaching the base. Decide how to protect the crew."],["Refugiarse en el hábitat (−50 energía)","Shelter in the habitat (−50 energy)"],["Ignorar la tormenta (−30 moral)","Ignore the storm (−30 morale)"],["La tripulación se refugió. Energía −50.","The crew took shelter. Energy −50."],["Se ignoró la tormenta. Moral −30.","The storm was ignored. Morale −30."],["Inicio de la noche lunar","Start of lunar night"],["La base entra en un periodo sin aporte solar. ¿Deseas activar el sistema de respaldo (","The base enters a period without solar input. Do you want to activate the backup system ("],["Activar ","Activate "],["Continuar sin respaldo","Continue without backup"],["Sistema de respaldo activado para los periodos nocturnos.","Backup system activated for nighttime periods."],["Se decidió no activar el respaldo energético.","The power backup was not activated."],["Comienza la noche lunar. No hay sistema de respaldo instalado.","Lunar night begins. No backup system is installed."],["Micrometeorito: fuga en el invernadero","Micrometeorite: greenhouse leak"],["Un micrometeorito dañó el invernadero. Puedes reparar la fuga con recursos o sellar y abandonar la instalación.","A micrometeorite damaged the greenhouse. You can repair the leak using resources or seal and abandon the facility."],["Reparar (−30 oxígeno, +40 polvo, −15 moral)","Repair (−30 oxygen, +40 dust, −15 morale)"],["Sellar y abandonar el invernadero","Seal and abandon the greenhouse"],["Oscuridad prolongada","Extended darkness"],["La oscuridad y el aislamiento afectan al ánimo de la tripulación.","Darkness and isolation affect the crew's morale."],["Continuar la misión (−15 moral)","Continue the mission (−15 morale)"],
@@ -369,6 +384,18 @@
       statusText = "Reservas de energía bajas";
       statusLevel = "warning";
     }
+    const adviceNode = $("#system-advice");
+    if (adviceNode) {
+      let advice = "Sistemas estables: continúa vigilando los recursos y prepara el respaldo energético antes de la noche lunar.";
+      if (state.greenhouseDestroyed) advice = "Invernadero dañado: revisa el evento y compara el coste de reparar con sellarlo. Si reparas, vigila especialmente el oxígeno y el polvo.";
+      else if (criticalResource?.[0] === "oxygen") advice = "Oxígeno bajo: genera oxígeno antes de avanzar el periodo. Si está por debajo del 25%, prioriza esta acción y evita gastar energía en tareas no esenciales.";
+      else if (criticalResource?.[0] === "water") advice = "Agua baja: extrae hielo lunar para recuperar reservas. Ten en cuenta que extraer hielo consume oxígeno y genera polvo.";
+      else if (criticalResource?.[0] === "energy" || state.energy / 500 < .35) advice = "Energía baja: instala baterías o un reactor antes de la noche lunar. En los días de oscuridad, activa el respaldo cuando aparezca el evento.";
+      else if (state.food <= 0) advice = "Comida agotada: cultiva el invernadero para recuperar alimentos y moral. Sin comida, la moral disminuye en cada periodo.";
+      else if (state.morale < 25) advice = "Moral crítica: recupera alimentos con el invernadero y evita decisiones que reduzcan más la moral.";
+      else if (state.dust >= 70) advice = "Polvo lunar elevado: usa Limpiar polvo antes de avanzar. El polvo alto reduce energía y moral.";
+      adviceNode.textContent = advice;
+    }
     $("#system-status").textContent = statusText;
     $("#system-status").className = statusLevel;
     $(".status-dot").className = "status-dot " + statusLevel;
@@ -513,6 +540,9 @@
     $("#event-icon").textContent = config.icon;
     $("#event-title").textContent = config.title;
     $("#event-description").textContent = config.description;
+    const eventAdvice = $("#event-advice");
+    if (eventAdvice) eventAdvice.textContent = config.advice || "Lee el coste de cada opción antes de elegir. La decisión se aplica inmediatamente y después se calcula el consumo del periodo.";
+
     $("#event-options").innerHTML = "";
     config.options.forEach((option) => {
       const button = document.createElement("button");
@@ -551,6 +581,7 @@
       showEvent({
         background: "storm",
         icon: "☀", title: "Tormenta solar",
+        advice: "Tormenta solar: refugiarse protege a la tripulación, pero cuesta 50 de energía. Comprueba tus reservas antes de elegir.",
         description: "Una tormenta solar se aproxima a la base. Debes decidir cómo proteger a la tripulación.",
         options: [
           { label: "Refugiarse en el hábitat (−50 energía)", primary: true, effect: () => { state.energy = clamp(state.energy - 50, 0, 500); }, log: "La tripulación se refugió. Energía −50.", decision: "Tormenta solar: refugio" },
@@ -593,6 +624,7 @@
         showEvent({
           icon: "☾",
           title: "Inicio de la noche lunar",
+          advice: "Noche lunar: sin luz solar, la energía puede caer rápidamente. Activa el reactor o las baterías instaladas; continuar sin respaldo puede agotar la energía.",
           description: "La base entra en un periodo sin luz solar. Elige cómo afrontar el frío y el consumo energético durante la noche lunar.",
           options
         });
@@ -605,6 +637,7 @@
       showEvent({
         background: "meteorite",
         icon: "☄", title: "Micrometeorito: fuga en el invernadero",
+        advice: "Micrometeorito: reparar consume oxígeno y aumenta el polvo. Sellar evita ese coste, pero pierdes el invernadero para el resto de la misión.",
         description: "Un micrometeorito dañó el invernadero. Puedes reparar la fuga con recursos o sellar y abandonar la instalación.",
         options: [
           { label: "Reparar (−30 oxígeno, +40 polvo, −15 moral)", primary: true, effect: () => {
@@ -618,6 +651,7 @@
     } else if (day === 20) {
       showEvent({
         icon: "◐", title: "Oscuridad prolongada",
+        advice: "Oscuridad prolongada: esta decisión reduce la moral. Mantén comida suficiente y evita acumular más penalizaciones.",
         description: "La oscuridad y el aislamiento afectan al ánimo de la tripulación.",
         options: [
           { label: "Continuar la misión (−15 moral)", primary: true, effect: () => { state.morale = clamp(state.morale - 15, 0, 100); }, log: "La oscuridad prolongada redujo la moral en 15 puntos.", decision: "Oscuridad prolongada: continuar" }
