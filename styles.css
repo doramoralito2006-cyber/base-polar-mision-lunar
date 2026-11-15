@@ -3112,3 +3112,53 @@ html[lang="es"] #screen-game .game-layout > #system-advice::before{
   }
   #screen-game .game-layout > #system-advice::after{left:12px}
 }
+
+
+/* Ventana central de orientación, coherente con los cuadros de decisión. */
+.guidance-modal{z-index:24!important}
+.guidance-card{
+  position:relative;
+  width:min(560px,calc(100vw - 32px))!important;
+  padding:34px 34px 32px!important;
+  border:1px solid rgba(75,190,224,.65)!important;
+  border-top:3px solid #42cbe9!important;
+  border-radius:16px!important;
+  background:linear-gradient(145deg,rgba(9,30,49,.99),rgba(5,17,31,.99))!important;
+  box-shadow:0 24px 80px rgba(0,0,0,.72),0 0 30px rgba(54,194,226,.2)!important;
+}
+.guidance-card .guidance-icon{color:#62d9f1!important}
+.guidance-card #guidance-title{color:#eafaff!important}
+.guidance-card #guidance-message{
+  margin:12px 8px 4px!important;
+  color:#d4e6f2!important;
+  font-size:15px!important;
+  line-height:1.75!important;
+}
+.guidance-close-btn{
+  position:absolute!important;
+  top:12px!important;
+  right:13px!important;
+  display:grid!important;
+  place-items:center!important;
+  width:36px!important;
+  height:36px!important;
+  padding:0!important;
+  border:1px solid rgba(173,198,215,.5)!important;
+  border-radius:8px!important;
+  background:rgba(12,34,52,.9)!important;
+  color:#d9edf7!important;
+  font:700 28px/1 Arial,sans-serif!important;
+  cursor:pointer!important;
+  transition:background .18s,border-color .18s,color .18s,box-shadow .18s!important;
+}
+.guidance-close-btn:hover,.guidance-close-btn:focus-visible{
+  color:#fff!important;
+  background:#b92535!important;
+  border-color:#ff6876!important;
+  box-shadow:0 0 0 2px rgba(255,74,91,.2),0 0 16px rgba(255,65,83,.4)!important;
+  outline:none!important;
+}
+@media(max-width:600px){
+ .guidance-card{padding:30px 18px 24px!important}
+ .guidance-card #guidance-message{font-size:14px!important}
+}
