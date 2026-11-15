@@ -3472,3 +3472,15 @@ html[lang="es"] #screen-game .game-layout > #system-advice::before{
 /* Mantener imágenes completas y centradas en la cara inicial. */
 #screen-encyclopedia .structure-flip-back img{object-fit:contain!important}
 #screen-encyclopedia .research-flip-back .data-image{object-fit:contain!important}
+
+
+/* INFRAESTRUCTURA: texto primero; la imagen aparece al pasar el cursor. */
+#screen-encyclopedia .structure-flip-front{transform:none!important}
+#screen-encyclopedia .structure-flip-back{transform:rotateY(180deg)!important}
+#screen-encyclopedia .structure-flip-card:hover .structure-flip-inner,
+#screen-encyclopedia .structure-flip-card:focus .structure-flip-inner{transform:rotateY(180deg)}
+/* RESEARCH ARCHIVE mantiene la imagen como cara inicial y el concepto al girar. */
+#screen-encyclopedia .research-flip-front{transform:rotateY(180deg)!important}
+#screen-encyclopedia .research-flip-back{transform:none!important}
+#screen-encyclopedia .research-flip-card:hover .research-flip-inner,
+#screen-encyclopedia .research-flip-card:focus .research-flip-inner{transform:rotateY(180deg)}
