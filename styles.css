@@ -2931,3 +2931,52 @@
 /* Controles de audio: opción de silencio */
 .settings-card .audio-mute-row{display:flex;align-items:center;gap:10px;margin:14px 0 18px;color:#cfe5f1;font-size:13px;line-height:1.4;cursor:pointer}
 .settings-card .audio-mute-row input{width:17px;height:17px;accent-color:#2dc8e8;cursor:pointer}
+
+
+/* Audio mute: control destacado, grande y fácil de localizar. */
+#settings-modal .audio-mute-row{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:14px!important;
+  min-height:58px!important;
+  margin:20px 0 22px!important;
+  padding:14px 18px!important;
+  border:2px solid #39c9e8!important;
+  border-radius:12px!important;
+  background:linear-gradient(110deg,rgba(17,105,139,.42),rgba(9,31,53,.96))!important;
+  color:#fff!important;
+  font-size:clamp(15px,1.1vw,18px)!important;
+  font-weight:800!important;
+  letter-spacing:.35px!important;
+  text-shadow:0 1px 5px #00101d!important;
+  box-shadow:0 0 0 2px rgba(45,200,232,.12),0 0 20px rgba(45,200,232,.24)!important;
+  cursor:pointer!important;
+}
+#settings-modal .audio-mute-row input{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  flex:0 0 28px!important;
+  width:28px!important;
+  height:28px!important;
+  margin:0!important;
+  border:2px solid #a7eaff!important;
+  border-radius:6px!important;
+  background:#061a2b!important;
+  box-shadow:inset 0 0 0 2px rgba(0,0,0,.35)!important;
+  cursor:pointer!important;
+}
+#settings-modal .audio-mute-row input:checked{
+  background:#16a6c9!important;
+  border-color:#e2fbff!important;
+  box-shadow:inset 0 0 0 5px #061a2b,0 0 12px rgba(45,200,232,.65)!important;
+}
+#settings-modal .audio-mute-row:has(input:checked){
+  border-color:#ffbd63!important;
+  background:linear-gradient(110deg,rgba(137,78,22,.45),rgba(37,26,18,.96))!important;
+  box-shadow:0 0 18px rgba(255,177,77,.2)!important;
+}
+#settings-modal .audio-mute-row:focus-within{
+  outline:3px solid rgba(255,255,255,.8)!important;
+  outline-offset:3px!important;
+}
