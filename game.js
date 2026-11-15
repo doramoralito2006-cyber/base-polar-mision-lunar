@@ -384,7 +384,7 @@
       statusText = "Reservas de energía bajas";
       statusLevel = "warning";
     }
-    const adviceNode = $("#system-advice");
+    const adviceNode = $("#guidance-message");
     if (adviceNode) {
       let advice = "Sistemas estables: continúa vigilando los recursos y prepara el respaldo energético antes de la noche lunar.";
       if (state.greenhouseDestroyed) advice = "Invernadero dañado: revisa el evento y compara el coste de reparar con sellarlo. Si reparas, vigila especialmente el oxígeno y el polvo.";
@@ -395,6 +395,20 @@
       else if (state.morale < 25) advice = "Moral crítica: recupera alimentos con el invernadero y evita decisiones que reduzcan más la moral.";
       else if (state.dust >= 70) advice = "Polvo lunar elevado: usa Limpiar polvo antes de avanzar. El polvo alto reduce energía y moral.";
       adviceNode.textContent = translateText(advice);
+      const guidanceModal = $("#guidance-modal");
+      const guidanceTitle = $("#guidance-title");
+      const guidanceEyebrow = $("#guidance-eyebrow");
+      const closeGuidance = $("#close-guidance-btn");
+      const guidanceKey = "basePolarGuidanceClosedV1";
+      let guidanceClosed = false;
+      try { guidanceClosed = sessionStorage.getItem(guidanceKey) === "1"; } catch (error) {}
+      if (guidanceTitle) guidanceTitle.textContent = currentLanguage === "es" ? "Consejo de misión" : "Mission guidance";
+      if (guidanceEyebrow) guidanceEyebrow.textContent = currentLanguage === "es" ? "ORIENTACIÓN DE MISIÓN" : "MISSION GUIDANCE";
+      if (closeGuidance) closeGuidance.setAttribute("aria-label", currentLanguage === "es" ? "Cerrar orientación" : "Close guidance");
+      if (guidanceModal && !guidanceClosed && !guidanceModal.dataset.dismissed) {
+        guidanceModal.classList.remove("hidden");
+        guidanceModal.setAttribute("aria-hidden", "false");
+      }
     }
     $("#system-status").textContent = statusText;
     $("#system-status").className = statusLevel;
@@ -818,6 +832,22 @@
     updateStartButton();
   });
 
+  const guidanceModal = $("#guidance-modal");
+  const closeGuidanceButton = $("#close-guidance-btn");
+  function dismissGuidance() {
+    if (!guidanceModal) return;
+    guidanceModal.classList.add("hidden");
+    guidanceModal.setAttribute("aria-hidden", "true");
+    guidanceModal.dataset.dismissed = "1";
+    try { sessionStorage.setItem("basePolarGuidanceClosedV1", "1"); } catch (error) {}
+  }
+  if (closeGuidanceButton) closeGuidanceButton.addEventListener("click", dismissGuidance);
+  if (guidanceModal) guidanceModal.addEventListener("click", (event) => {
+    if (event.target === guidanceModal) dismissGuidance();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && guidanceModal && !guidanceModal.classList.contains("hidden")) dismissGuidance();
+  });
   $("#start-btn").addEventListener("click", () => { const saved=readSavedGame(); if(saved&&saved.state&&!saved.state.gameOver) resumeGame(); else startGame(); });
   $("#instructions-btn").addEventListener("click", () => showScreen("instructions"));
   // La enciclopedia recuerda desde qué pantalla se abrió para que la X
